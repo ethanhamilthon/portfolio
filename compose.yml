@@ -4,9 +4,14 @@ services:
   app:
     build: .
     container_name: portfolio
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.portfolio.entrypoints=websecure"
+      - "traefik.http.routers.portfolio.rule=Host(`yerd.me`)"
+      - "traefik.http.routers.portfolio.service=portfolio"
+      - "traefik.http.routers.portfolio.tls=true"
+      - "traefik.http.routers.portfolio.tls.certresolver=myresolver"
+      - "traefik.http.services.portfolio.loadbalancer.server.port=4001"
     ports:
       - 4001:4001
     restart: unless-stopped
-
-volumes:
-  exasdata:
