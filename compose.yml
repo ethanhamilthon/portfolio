@@ -17,3 +17,7 @@ services:
     restart: unless-stopped
     networks:
       - lev
+
+networks:
+  lev:
+    external: true
