@@ -15,3 +15,5 @@ services:
     ports:
       - 4001:4001
     restart: unless-stopped
+    networks:
+      - lev
