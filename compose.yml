@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    container_name: portfolio
+    ports:
+      - 4001:4001
+    restart: unless-stopped
+
+volumes:
+  exasdata:

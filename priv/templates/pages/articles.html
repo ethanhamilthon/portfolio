@@ -1,0 +1,26 @@
+<div class="flex flex-col gap-3">
+    <div class="flex flex-col gap-6">
+        <h1 class="text-4xl font-bold">My thoughts.</h1>
+        <span class="text-sm font-light text-zinc-400 w-1/2"
+            >I don't have any specific topic I write about, so it's just a brain
+            dump throughout the years.
+        </span>
+    </div>
+</div>
+
+<div class="w-full border-l border-l-zinc-600 flex flex-col gap-8">
+    <%= for d <- @data do %>
+    <a href=<%= d.link %> class="w-full flex items-start">
+        <span class="w-56 text-[12px] text-zinc-500 p-4"><%= d.date %></span>
+        <div
+            class="flex flex-col gap-4 p-4 pr-24 rounded-xl group hover:bg-zinc-800 duration-200"
+        >
+            <span class="text-lg font-semibold"><%= d.title %></span>
+            <span class="text-zinc-400"><%= d.desc %></span>
+            <div class="text-emerald-500 flex items-center gap-3">
+                <span>read more</span>
+            </div>
+        </div>
+    </a>
+    <% end%>
+</>

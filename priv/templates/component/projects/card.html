@@ -1,0 +1,16 @@
+<div
+    class="flex-1 min-w-96 max-w-[400px] p-4 rounded-xl flex flex-col gap-4 group hover:bg-zinc-800 duration-300 cursor-pointer"
+>
+    <div class="flex gap-3 items-center">
+        <%= @avatar %>
+        <span class="font-semibold"><%= @title %></span>
+    </div>
+    <span class="text-zinc-400 text-[12px] w-3/5"> <%= @desc %> </span>
+    <div class="flex items-center gap-3">
+        <link class="w-4 h-4 text-zinc-500" />
+        <span class="text-[12px] group-hover:text-emerald-500"
+            ><%= @link %></span
+        >
+    </div>
+    <span class="text-zinc-500 text-[12px]">May 2025</span>
+</div>

@@ -1,0 +1,16 @@
+version: "3"
+
+tasks:
+  dev:
+    run: when_changed
+    deps:
+      - tailwind
+      - mix
+
+  tailwind:
+    cmds:
+      - ./tailwindcss -i ./priv/static/css/input.css -o ./priv/static/css/output.css --watch
+
+  mix:
+    cmds:
+      - mix run --no-halt
